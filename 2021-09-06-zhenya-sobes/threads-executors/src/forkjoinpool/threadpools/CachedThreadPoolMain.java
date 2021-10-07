@@ -24,7 +24,7 @@ public class CachedThreadPoolMain {
             copyOnWriteArrayList.add(Thread.currentThread().getName());
         };
 
-        for (int i = 0; i < 200000; i++) {
+        for (int i = 0; i < 20; i++) {
             cachedThreadPool.submit(runnable);
         }
 
