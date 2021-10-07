@@ -1,19 +1,16 @@
-package com.vladwild.resolve.entity.graph.entity;
+package com.vladwild.resolve.named.graph.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book")
-public class BookGraph {
+@Table(name = "author")
+public class AuthorNamed {
 
     private Long id;
     private String name;
-    private AuthorGraph author;
 
     @Id
     @GeneratedValue
@@ -31,15 +28,5 @@ public class BookGraph {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    public AuthorGraph getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(AuthorGraph author) {
-        this.author = author;
     }
 }
